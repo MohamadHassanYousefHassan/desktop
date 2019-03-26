@@ -1564,7 +1564,7 @@ export class App extends React.Component<IAppProps, IAppState> {
         )
       }
       case PopupType.RebaseFlow: {
-        const { selectedState } = this.state
+        const { selectedState, emoji } = this.state
 
         if (
           selectedState === null ||
@@ -1596,6 +1596,7 @@ export class App extends React.Component<IAppProps, IAppState> {
             conflictState={conflictState}
             resolvedExternalEditor={this.state.resolvedExternalEditor}
             openRepositoryInShell={this.openCurrentRepositoryInShell}
+            emoji={emoji}
           />
         )
       }

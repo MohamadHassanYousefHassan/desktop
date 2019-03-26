@@ -30,6 +30,7 @@ interface IRebaseFlowProps {
 
   readonly repository: Repository
   readonly dispatcher: Dispatcher
+  readonly emoji: Map<string, string>
 
   /** The current state of the working directory */
   readonly workingDirectory: WorkingDirectoryStatus
@@ -374,6 +375,7 @@ export class RebaseFlow extends React.Component<
         return (
           <RebaseProgressDialog
             progress={this.state.progress}
+            emoji={this.props.emoji}
             onDidMount={step.onDidMount}
           />
         )
